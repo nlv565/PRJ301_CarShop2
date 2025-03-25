@@ -81,7 +81,17 @@ public class CategoryManagement extends HttpServlet {
         request.setAttribute("categories", categories);
         request.getRequestDispatcher("category_management.jsp").forward(request, response);
     }
-
+     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, ClassNotFoundException, ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Optional<CategoryDTO> category = categoryDAO.getCategoryById(id);
+        if (category.isPresent()) {
+            request.setAttribute("category", category.get());
+            request.getRequestDispatcher("edit_category.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("CategoryManagement");
+        }
+    }
     private void addCategory(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ClassNotFoundException, IOException {
         String name = request.getParameter("name");
