@@ -132,6 +132,27 @@ public class ProductManagement extends HttpServlet {
         productDAO.addProduct(newProduct);
         response.sendRedirect("ProductManagement?action=list");
     }
+    
 
-   
+   private void updateProduct(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ClassNotFoundException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String description = request.getParameter("description");
+        double price = Double.parseDouble(request.getParameter("price"));
+        String img = request.getParameter("image");
+        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+        int inventory = Integer.parseInt(request.getParameter("inventory"));
+        boolean isActive = request.getParameter("isActive") != null;
+        int yearManufacturedInt = Integer.parseInt(request.getParameter("yearManufactured"));
+        String yearManufactured = String.valueOf(yearManufacturedInt);
+        String fuelType = request.getParameter("fuelType");
+        String transmission = request.getParameter("transmission");
+        ProductDTO updatedProduct = new ProductDTO(id, name, description, price, 0,
+                LocalDateTime.now(), categoryId, LocalDateTime.now(),
+                inventory, img, isActive, yearManufactured, fuelType, transmission);
+        productDAO.updateProduct(updatedProduct);
+        response.sendRedirect("ProductManagement?action=list");
+    }
 }
+
