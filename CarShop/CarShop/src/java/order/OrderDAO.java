@@ -81,6 +81,13 @@ public class OrderDAO {
             stmt.executeUpdate();
         }
     }
+    public void deleteOrder(int orderId) throws SQLException, ClassNotFoundException {
+        String DELETE_ORDER = "DELETE FROM [Order] WHERE id = ?";
+        try ( Connection conn = DBUtil.getConnection();  PreparedStatement stmt = conn.prepareStatement(DELETE_ORDER)) {
+            stmt.setInt(1, orderId);
+            stmt.executeUpdate();
+        }
+    }
 
    
 
