@@ -99,6 +99,12 @@ public class CategoryManagement extends HttpServlet {
         categoryDAO.addCategory(new CategoryDTO(0, name, icon));
         response.sendRedirect("CategoryManagement");
     }
+    private void deleteCategory(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, ClassNotFoundException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        deleteCategory(id);
+        response.sendRedirect("CategoryManagement");
+    }
 
  
 
