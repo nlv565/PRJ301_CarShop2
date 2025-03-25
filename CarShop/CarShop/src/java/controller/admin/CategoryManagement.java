@@ -102,7 +102,7 @@ public class CategoryManagement extends HttpServlet {
     private void deleteCategory(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ClassNotFoundException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        deleteCategory(id);
+        categoryDAO.deleteCategory(id);
         response.sendRedirect("CategoryManagement");
     }
 
