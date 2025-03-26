@@ -224,11 +224,17 @@
                             <a class="btn-link" href="">FAQs & Help</a>
                         </div>
                     </div>
-                    
-
-                    
-                   
-                </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-light mb-3">Contact</h4>
+                            <p>Address:107 Trần Đại Nghĩa </p>
+                            <p>Email: minhnhatvodung@gmail.com</p>
+                            <p>Phone:(+84)395204021</p>
+                            <p>Payment Accepted</p>
+                            <img src="img/payment.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                 </div>
             </div>
         </div>
         <!-- Footer End -->
