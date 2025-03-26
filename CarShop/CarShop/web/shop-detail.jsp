@@ -124,11 +124,6 @@
                                                 aria-controls="nav-about" aria-selected="true">
                                             Description
                                         </button>
-                                        <!--                                        <button class="nav-link border-white border-bottom-0" type="button" role="tab"
-                                                                                        id="nav-mission-tab" data-bs-toggle="tab" data-bs-target="#nav-mission"
-                                                                                        aria-controls="nav-mission" aria-selected="false">
-                                                                                    Reviews
-                                                                                </button>-->
                                     </div>
                                 </nav>
                                 <div class="tab-content mb-5">
