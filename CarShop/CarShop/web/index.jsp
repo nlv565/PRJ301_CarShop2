@@ -31,8 +31,153 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot Tư Vấn Xe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            z-index: 9999;
+            display: none;
+            cursor: grab;
+        }
+        .chat-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+            cursor: move;
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 14px;
+        }
+        .input-box {
+            display: flex;
+            margin-top: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 350px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
+<button class="toggle-btn" onclick="toggleChat()">💬 Mở Chat</button>
+<div class="chat-container" id="chatContainer">
+    <div class="chat-header" id="chatHeader">💬 Chatbot Tư Vấn Xe</div>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="input-box">
+        <input type="text" id="userInput" placeholder="Nhập câu hỏi...">
+        <button onclick="sendMessage()">Gửi</button>
+    </div>
+</div>
 
+<script>
+    function toggleChat() {
+        let chatContainer = document.getElementById("chatContainer");
+        let toggleBtn = document.querySelector(".toggle-btn");
+        if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+            chatContainer.style.display = "block";
+            toggleBtn.textContent = "❌ Đóng Chat";
+        } else {
+            chatContainer.style.display = "none";
+            toggleBtn.textContent = "💬 Mở Chat";
+        }
+    }
+
+    function sendMessage() {
+        let inputField = document.getElementById("userInput");
+        let chatBox = document.getElementById("chatBox");
+        let userMessage = inputField.value.trim();
+
+        if (userMessage === "") return;
+
+        chatBox.innerHTML += "<p><strong>Bạn:</strong> " + userMessage + "</p>";
+        inputField.value = "";
+
+        fetch("chatbot", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "message=" + encodeURIComponent(userMessage)
+        })
+        .then(response => response.text())
+        .then(data => {
+            chatBox.innerHTML += "<p><strong>Chatbot:</strong> " + data + "</p>";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        })
+        .catch(error => console.error("Lỗi:", error));
+    }
+
+    let chatContainer = document.getElementById("chatContainer");
+    let chatHeader = document.getElementById("chatHeader");
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    chatHeader.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - chatContainer.offsetLeft;
+        offsetY = e.clientY - chatContainer.offsetTop;
+        chatContainer.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+            chatContainer.style.left = (e.clientX - offsetX) + "px";
+            chatContainer.style.top = (e.clientY - offsetY) + "px";
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+        chatContainer.style.cursor = "grab";
+    });
+</script>
+
+</body>
+</html>
         <jsp:include page="/customer-partials/_nav-bar.jsp" />
 
 
