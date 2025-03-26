@@ -1,5 +1,6 @@
 Cấu trúc thư mục
 
+
 CarShop/
 │── build/                  # Thư mục chứa các tệp build (NetBeans tự động tạo)
 │── lib/                    # Thư viện bên ngoài (JAR files)
