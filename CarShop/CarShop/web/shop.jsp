@@ -78,7 +78,7 @@
         <!-- Single Page Header End -->
 
 
-        <!-- Car Shop Start-->
+        <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
             <div class="container py-5">
                 <h1 class="mb-4">Car Shop</h1>
@@ -95,7 +95,17 @@
                             </div>
 
                             <div class="col-6"></div>
-                            
+                            <!--                            <div class="col-xl-3">
+                                                            <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
+                                                                <label for="fruits">Default Sorting:</label>
+                                                                <select id="fruits" name="fruitlist" class="border-0 form-select-sm bg-light me-3" form="fruitform">
+                                                                    <option value="volvo">Nothing</option>
+                                                                    <option value="saab">Popularity</option>
+                                                                    <option value="opel">Organic</option>
+                                                                    <option value="audi">Fantastic</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>-->
                         </div>
                         <div class="row g-4">
                             <div class="col-lg-3">
@@ -130,7 +140,13 @@
                                         </div>
 
                                     </div>
-                                   
+                                    <!--                                    <div class="col-lg-12">
+                                                                            <div class="mb-3">
+                                                                                <h4 class="mb-2">Price</h4>
+                                                                                <input type="range" class="form-range w-100" id="rangeInput" name="rangeInput" min="0" max="500" value="0" oninput="amount.value=rangeInput.value">
+                                                                                <output id="amount" name="amount" min-velue="0" max-value="500" for="rangeInput">0</output>
+                                                                            </div>
+                                                                        </div>-->
 
                                     <div class="col-lg-12">
                                         <div class="position-relative">
@@ -194,7 +210,7 @@
                 </div>
             </div>
         </div>
-        <!-- Car Shop End-->
+        <!-- Fruits Shop End-->
 
 
         <!-- Footer Start -->
@@ -232,25 +248,7 @@
                             <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
                         </div>
                     </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright bg-dark py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 my-auto text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    </div>
- <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="d-flex flex-column text-start footer-item">
                             <h4 class="text-light mb-3">Shop Info</h4>
                             <a class="btn-link" href="">About Us</a>
@@ -281,6 +279,24 @@
                             <p>Payment Accepted</p>
                             <img src="img/payment.png" class="img-fluid" alt="">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 my-auto text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    </div>
                 </div>
             </div>
         </div>
